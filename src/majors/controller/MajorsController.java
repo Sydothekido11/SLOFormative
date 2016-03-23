@@ -16,8 +16,6 @@ public class MajorsController
 	{
 		
 		myDisplay = new MajorsDisplay();
-		String user = myDisplay.getUserInput("Enter your name!");
-		myMajors = new MajorsModel(user);
 		majorsFrame = new MajorsFrame(this);
 		
 	}
@@ -26,15 +24,13 @@ public class MajorsController
 	{
 		myDisplay.displayResponse("Hello " + myMajors.getUserName());
 	}
-	
-	private void 
+	public String fromUserToModel(String userText)
 	{
-		String textFromUser - myDisplay.getUserInput("");
-		while(myMajors.lengthChecker(textFromUser))
-		{
-			textFromUser = myMajors.processQuestion(textFromUser);
-			textFromUser = myDisplay.getUserInput(textFromUser);
-		}
+		String response = "";
+		
+		response = myMajors.processResponse(userText);
+		
+		return response;
 	}
 	
 	public MajorsModel getMajorsModel()
